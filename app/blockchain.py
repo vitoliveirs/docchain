@@ -1,5 +1,6 @@
 import hashlib
 import datetime as date
+from http.client import HTTPException
 
 # Cria um block
 class Block:
@@ -32,7 +33,7 @@ class Block:
 class Blockchain:
     def __init__(self):
         self.chain = [self.create_genesis_block()]
-        self.difficulty = 1
+        self.difficulty = 2
     
     #Cria o bloco genesis (o primeiro bloco da blockchain)
     def create_genesis_block(self):
@@ -58,33 +59,11 @@ class Blockchain:
 
         return True
 
-
-my_blockchain = Blockchain()
-
-compra1 = {
-    'comprador': 'João',
-    'vendedor': 'Maria',
-    'valor': 1000,
-    'item': 'Mustang'
-}
-
-doc = {
-    'item': 'Mustang',
-    'valor_pago_ao_cartorio': 10000,
-    'valor_do_item': 100000,
-    'data': '2020-10-10',
-}
-
-my_blockchain.add_block(Block(1, date.datetime.now(), compra1, my_blockchain.chain[-1].hash))
-my_blockchain.add_block(Block(2, date.datetime.now(), doc, my_blockchain.chain[-1].hash))
-
-def print_chain(chain):
-        for block in chain:
+    def print_chain(self):
+        for block in self.chain:
             print("Block #", block.index)
             print("Timestamp: ", block.timestamp)
             print("Data: ", block.data)
             print("Previous Hash: ", block.previous_hash)
             print("Hash: ", block.hash)
             print(20*'----')
-
-print_chain(my_blockchain.chain)
