@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, HTTPException
-from . import blockchain as _blockchain
+import blockchain as _blockchain
 
 router = APIRouter()
 blockchain = _blockchain.Blockchain()

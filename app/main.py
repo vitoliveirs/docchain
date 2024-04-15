@@ -1,4 +1,3 @@
-import logging
 from fastapi import FastAPI
 from . import exams, blocks
 

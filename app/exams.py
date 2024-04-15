@@ -1,7 +1,7 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Header
 from typing import List, Dict, Any
 from datetime import datetime
-from . import PatientModel, blocks, ipfsService, blockchain, proccessBlocks
+import PatientModel, blocks, ipfsService, blockchain
 import uuid, json
 
 router = APIRouter()
