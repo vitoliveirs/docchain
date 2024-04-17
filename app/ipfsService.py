@@ -26,8 +26,7 @@ def addData(Data: dict, Hash: str):
         jsonData_bytes = jsonData.encode('utf-8')
 
         # Define o caminho completo para o arquivo JSON
-        file_path = os.path.join('C:\\Users\\oliveira\\Desktop\\docchain\\app\\ipfsExams', f'{Hash}-exam.json')
-
+        file_path = os.path.join('app', 'ipfsExams', f'{Hash}-exam.json')
         # Cria um novo arquivo JSON localmente
         with open(file_path, 'wb') as json_file:
             json_file.write(jsonData_bytes)
