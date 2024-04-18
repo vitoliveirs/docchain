@@ -1,7 +1,9 @@
 import json
-import ipfshttpclient
+from . import ipfshttpclientdoc
 import os
 from datetime import datetime
+
+ipfshttpclient = ipfshttpclientdoc
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
