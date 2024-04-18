@@ -12,7 +12,7 @@ class MyEncoder(json.JSONEncoder):
 def addData(Data: dict, Hash: str):
     try:
         # Conecta ao daemon do IPFS
-        client = ipfshttpclient.connect('/ip4/127.0.0.1/tcp/5001')
+        client = ipfshttpclient.connect('/ip4/62.169.20.134/tcp/5001')
 
         # Converte o dicionário em uma string JSON
         jsonData = json.dumps(Data, cls=MyEncoder)
@@ -35,6 +35,3 @@ def addData(Data: dict, Hash: str):
         raise ValueError(f"Falha ao adicionar arquivo ao IPFS. Detalhes: {str(e)}")
 
     return 1
-
-def updateData(Data: str):
-    return 0
